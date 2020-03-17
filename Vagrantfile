@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
-  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -44,7 +44,10 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
+
   config.vm.synced_folder "./configs", "/etc/datadog-agent"
+  config.vm.synced_folder "./prometheus", "/home/vagrant/prometheus"
+  # config.vm.synced_folder "./bashrc", "/home/vagrant/bashrc"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -73,6 +76,16 @@ Vagrant.configure("2") do |config|
     yes y | sudo apt-get install docker-ce
     sudo usermod -aG docker $USER
     eval "$(curl https://raw.githubusercontent.com/ian28223/Datadog-ian/master/ddev/pyenv_ddev_setup.sh)"
+    yes y| sudo apt install default-jre
+    wget https://github.com/jiaqi/jmxterm/releases/download/v1.0.1/jmxterm-1.0.1-uber.jar
+    yes y| sudo apt install npm
+    sudo npm install http-server -g
     sudo sh /vagrant/2ddev_setup.sh
   SHELL
+  config.trigger.after :up do |trigger|
+    trigger.run_remote = {inline: "sudo service datadog-agent restart"}
+  end
+  #config.trigger.after :up do |trigger|
+  #  trigger.run_remote = {inline: "sudo cp /home/vagrant/bashrc/.bashrc /home/vagrant/"}
+  #end
 end

@@ -1,0 +1,4 @@
+# HELP http_server_requests_seconds
+# TYPE http_server_requests_seconds untyped
+http_server_requests_seconds_count 13108.0
+http_server_requests_seconds_sum 15.465906162
