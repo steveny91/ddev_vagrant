@@ -1,0 +1,14 @@
+# HELP http_server_requests_labels
+# TYPE http_server_requests_labels gauge
+http_server_requests_labels{tag_a="hello",tag_b="default", tag_c="http", tag_d="prod", tag_e="datadog"} 1
+
+# HELP http_server_requests_no_labels
+# TYPE http_server_requests_no_labels gauge
+http_server_requests_no_labels{tag_a="hello"} 1
+
+# HELP kube_deployment_spec_strategy_rollingupdate_max_unavailable
+# TYPE kube_deployment_spec_strategy_rollingupdate_max_unavailable gauge
+kube_deployment_spec_strategy_rollingupdate_max_unavailable{deployment="kube-dns",namespace="kube-system"} 1
+
+# HELP kube_deployment_labels
+kube_deployment_labels{deployment="kube-dns",label_addonmanager_kubernetes_io_mode="Reconcile",label_k8s_app="kube-dns",label_version="v20",namespace="kube-system"} 1

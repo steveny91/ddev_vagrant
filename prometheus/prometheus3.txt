@@ -1,4 +1,14 @@
-# HELP http_server_requests_seconds
-# TYPE http_server_requests_seconds untyped
-http_server_requests_seconds_count 13108.0
-http_server_requests_seconds_sum 15.465906162
+# HELP http_request_duration_seconds Histogram of latencies for HTTP requests.
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{tag_a="hello",le="0.1"} 25547
+http_request_duration_seconds_bucket{tag_a="hello",le="0.2"} 26688
+http_request_duration_seconds_bucket{tag_a="hello",le="0.4"} 27760
+http_request_duration_seconds_bucket{tag_a="hello",le="1"} 28641
+http_request_duration_seconds_bucket{tag_a="hello",le="3"} 28782
+http_request_duration_seconds_bucket{tag_a="hello",le="8"} 28844
+http_request_duration_seconds_bucket{tag_a="hello",le="20"} 28855
+http_request_duration_seconds_bucket{tag_a="hello",le="60"} 28860
+http_request_duration_seconds_bucket{tag_a="hello",le="120"} 28860
+http_request_duration_seconds_bucket{tag_a="hello",le="+Inf"} 28860
+http_request_duration_seconds_sum{tag_a="hello"} 1863.80491025699
+http_request_duration_seconds_count{tag_a="hello"} 28860
