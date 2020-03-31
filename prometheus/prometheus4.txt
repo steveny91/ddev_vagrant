@@ -5,9 +5,5 @@ http_server_requests_seconds{quantile="0.05"} 3272
 http_server_requests_seconds{quantile="0.5"} 4773
 http_server_requests_seconds{quantile="0.9"} 9001
 http_server_requests_seconds{quantile="0.99"} 76656
-http_server_requests_seconds_count{tag_a="hello",tagb="default"} 13108.0
-http_server_requests_seconds_sum{tag_a="hello",tagb="default"} 15.465906162
-
-
-
-http_server_requests_seconds_count{tag_a="hello",tagb="default"} 13110
+http_server_requests_seconds_count{tag_a="hello",tagb="default"} 1.7560473e+07
+http_server_requests_seconds_sum{tag_a="hello",tagb="default"} 2693
