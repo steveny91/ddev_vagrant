@@ -1,0 +1,9 @@
+# HELP http_server_requests_seconds Number of startWork calls rejected
+http_server_requests_seconds{workmanager="default",} 1.0
+
+# HELP http_server_requests_seconds_threshold Send an ack immediately when a batch of ack_threshold (or more) messages is received. Otherwise send delayed acks. If 1, ack single messages (similar to UNICAST)
+http_server_requests_seconds_threshold{channel="ee",protocol="UNICAST3",} 5.0
+
+# HELP http_server_requests_seconds_size The number of prepared and callable statements currently cached in the statement cache
+# TYPE http_server_requests_seconds_size untyped
+http_server_requests_seconds_size{data_source="KeycloakDS"} 10

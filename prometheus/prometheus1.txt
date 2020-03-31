@@ -1,0 +1,5 @@
+# HELP http_server_requests_seconds_gauge
+# TYPE http_server_requests_seconds_gauge gauge
+http_server_requests_seconds_gauge{tag_a="hello",tag_extra="c"} 15.465906162
+http_server_requests_seconds_gauge{tag_a="world",tag_extra="d"} 10.465906162
+

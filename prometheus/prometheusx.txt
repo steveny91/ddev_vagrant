@@ -1,0 +1,10 @@
+# HELP wildfly_jca_local_startwork_rejected Number of startWork calls rejected
+# TYPE wildfly_jca_local_startwork_rejected gauge
+wildfly_jca_local_startwork_rejected{workmanager="default",} 0.0
+# HELP wildfly_jgroups_ack_threshold Send an ack immediately when a batch of ack_threshold (or more) messages is received. Otherwise send delayed acks. If 1, ack single messages (similar to UNICAST)
+# TYPE wildfly_jgroups_ack_threshold gauge
+wildfly_jgroups_ack_threshold{channel="ee",protocol="UNICAST3",} 5.0
+# HELP wildfly_datasources_jdbc_prepared_statement_cache_current_size The number of prepared and callable statements currently cached in the statement cache
+# TYPE wildfly_datasources_jdbc_prepared_statement_cache_current_size gauge
+wildfly_datasources_jdbc_prepared_statement_cache_current_size{data_source="ExampleDS",} 0.0
+wildfly_datasources_jdbc_prepared_statement_cache_current_size{data_source="KeycloakDS",} 0.0
