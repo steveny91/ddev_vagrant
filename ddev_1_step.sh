@@ -53,11 +53,11 @@ echo -e "${GREEN}Retrieving latest Python versions${NOCOLOR}"
 ## Set latest Python 2/3
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   py2latest="$(pyenv install -l | grep -oP '^\s*2\.\d+\.(\d+)$' | sort -V | tail -n1)"
-  py3latest="$(pyenv install -l | grep -oP '^\s*3\.\d+\.(\d+)$' | sort -V | tail -n1)"
+  py3latest="3.8.6"
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   py2latest="$(pyenv install -l | grep -oE '^\s*2\.\d+\.(\d+)$' | sort -V | tail -n1)"
-  py3latest="$(pyenv install -l | grep -oE '^\s*3\.\d+\.(\d+)$' | sort -V | tail -n1)"
+  py3latest="3.8.6"
 fi;
 
 echo "Latest Python 2: $py2latest" && \
@@ -66,7 +66,7 @@ echo "Latest Python 3: $py3latest" && \
 ## Install latest Python 2/3
 echo -e "${GREEN}Installing Python versions${NOCOLOR}"
 pyenv install $py2latest && \
-pyenv install 3.8.6 && \
+pyenv install $py3latest && \
 
 ## Set global python
 # Choose which Python to set as global.
