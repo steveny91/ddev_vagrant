@@ -75,7 +75,7 @@ Vagrant.configure("2") do |config|
     sudo apt-get update
     yes y | sudo apt-get install docker-ce
     sudo usermod -aG docker $USER
-    eval "$(curl https://raw.githubusercontent.com/ian28223/Datadog-ian/master/ddev/pyenv_ddev_setup.sh)"
+    eval "$(curl https://raw.githubusercontent.com/steveny91/ddev_vagrant/master/ddev_1_step.sh)"
     yes y| sudo apt install default-jre
     wget https://github.com/jiaqi/jmxterm/releases/download/v1.0.1/jmxterm-1.0.1-uber.jar
     yes y| sudo apt install npm
