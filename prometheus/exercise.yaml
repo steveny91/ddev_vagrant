@@ -4,7 +4,7 @@ ad_identifiers:
   - cluster-autoscaler
 init_config:
 instances:
-  - prometheus_url: "http://%%host%%:8085/metrics"
+  - prometheus_url: "http://localhost:8085/metrics"
     namespace: "cluster-autoscaler"
     metrics:
       - cluster_autoscaler_evicted_pods_total: cluster_autoscaler_evicted_pods_total
@@ -15,7 +15,7 @@ instances:
       - cluster_autoscaler_unschedulable_pods_count: cluster_autoscaler_unschedulable_pods_count
       - cluster_autoscaler_last_activity: cluster_autoscaler_last_activity
       - cluster_autoscaler_unneeded_nodes_count: cluster_autoscaler_unneeded_nodes_count
-  - prometheus_url: "http://%%host%%:8080/metrics"
+  - prometheus_url: "http://localhost:8080/metrics"
     namespace: "mobile"
     metrics:
       - sanic_request_count_total: sanic_request_count_total
