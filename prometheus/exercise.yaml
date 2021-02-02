@@ -1,0 +1,77 @@
+ad_identifiers:
+  - rr-events
+  - rr-member-dna
+  - cluster-autoscaler
+init_config:
+instances:
+  - prometheus_url: "http://%%host%%:8085/metrics"
+    namespace: "cluster-autoscaler"
+    metrics:
+      - cluster_autoscaler_evicted_pods_total: cluster_autoscaler_evicted_pods_total
+      - cluster_autoscaler_cluster_safe_to_autoscale: cluster_autoscaler_cluster_safe_to_autoscale
+      - cluster_autoscaler_nodes_count: cluster_autoscaler_nodes_count
+      - cluster_autoscaler_scaled_up_nodes_total: cluster_autoscaler_scaled_up_nodes_total
+      - cluster_autoscaler_scaled_down_nodes_total: cluster_autoscaler_scaled_down_nodes_total
+      - cluster_autoscaler_unschedulable_pods_count: cluster_autoscaler_unschedulable_pods_count
+      - cluster_autoscaler_last_activity: cluster_autoscaler_last_activity
+      - cluster_autoscaler_unneeded_nodes_count: cluster_autoscaler_unneeded_nodes_count
+  - prometheus_url: "http://%%host%%:8080/metrics"
+    namespace: "mobile"
+    metrics:
+      - sanic_request_count_total: sanic_request_count_total
+      - sanic_mem_rss_bytes: sanic_mem_rss_bytes
+      - event_collector_sent_event_count_total: event_collector_sent_event_count_total
+      - event_collector_received_event_count_total: event_collector_received_event_count_total
+      - event_collector_cdn_count_total: event_collector_cdn_count_total
+      - segment_consumer_received_event_count_total: segment_consumer_received_event_count_total
+      - segment_consumer_sent_event_count_total: segment_consumer_sent_event_count_total
+      - segment_consumer_exception_count_total: segment_consumer_exception_count_total
+      - segment_consumer_retry_count_total: segment_consumer_exception_count_total
+      - segment_consumer_kafka_offset: segment_consumer_kafka_offset 
+      - bi_consumer_received_batch_event_count_total: bi_consumer_received_batch_event_count_total
+      - bi_consumer_sent_batch_event_count_total: bi_consumer_sent_batch_event_count_total
+      - bi_consumer_sent_total_event_count_total: bi_consumer_sent_total_event_count_total
+      - ftbordercompleted_consumer_sent_event_count_total: ftbordercompleted_consumer_sent_event_count_total
+      - ftbordercompleted_consumer_received_event_count_total: ftbordercompleted_consumer_received_event_count_total
+      - ftbordercompleted_consumer_retry_count_total: ftbordercompleted_consumer_retry_count_total
+      - ftbordercompleted_consumer_failed_event_count_total: ftbordercompleted_consumer_failed_event_count_total
+      - optimizely_consumer_received_event_count_total: optimizely_consumer_received_event_count_total
+      - optimizely_consumer_sent_event_count_total: optimizely_consumer_sent_event_count_total
+      - optimizely_consumer_anonymous_event_count_total: optimizely_consumer_anonymous_event_count_total
+      - optimizely_consumer_whitelisted_event_count_total: optimizely_consumer_whitelisted_event_count_total
+      - optimizely_data_sync_error_count_total: optimizely_data_sync_error_count_total
+      - ordercompleted_consumer_received_event_count_total: ordercompleted_consumer_received_event_count_total
+      - ordercompleted_consumer_sent_event_count_total: ordercompleted_consumer_sent_event_count_total
+      - ordercompleted_consumer_failed_event_count_total: ordercompleted_consumer_failed_event_count_total
+      - ordercompleted_consumer_retry_count_total: ordercompleted_consumer_retry_count_total
+      - amplitude_sessionfix_sent_event_count_total: amplitude_sessionfix_sent_event_count_total
+      - amplitude_sessionfix_consumer_retry_count_total: amplitude_sessionfix_consumer_retry_count_total
+      - addfavorite_consumer_received_event_count_total: addfavorite_consumer_received_event_count_total
+      - addfavorite_consumer_sent_event_count_total: addfavorite_consumer_sent_event_count_total
+      - addfavorite_consumer_failed_event_count_total: addfavorite_consumer_failed_event_count_total
+      - addfavorite_consumer_retry_count_total: addfavorite_consumer_retry_count_total
+      - member_dna_redis_get_duration_count: member_dna_redis_get_duration_count
+      - member_dna_redis_set_duration_count: member_dna_redis_set_duration_count
+      - member_dna_redis_get_status_total: member_dna_redis_get_status_total
+      - member_dna_redis_flush_count_total: member_dna_redis_flush_count_total
+      - member_dna_segment_profile_calls_status_total: member_dna_segment_profile_calls_status_total
+      - member_dna_external_req_timeout_count_total: member_dna_external_req_timeout_count_total
+      - member_dna_external_req_count_total: member_dna_external_req_count_total
+      - member_dna_segment_profile_calls_duration: member_dna_segment_profile_calls_duration
+      - member_dna_get_profile_duration: member_dna_get_profile_duration
+      - member_dna_gp_segment_query_total: member_dna_gp_segment_query_total
+      - member_dna_gp_cache_hit_total: member_dna_gp_cache_hit_total
+      - member_dna_gp_fill_keys_total: member_dna_gp_fill_keys_total
+      - member_dna_cached_profile_staleness_count: member_dna_cached_profile_staleness_count
+      - member_dna_segment_profile_calls_duration_bucket: member_dna_segment_profile_calls_duration_bucket
+      - member_dna_redis_get_duration_bucket: member_dna_redis_get_duration_bucket
+      - member_dna_redis_set_duration_bucket: member_dna_redis_set_duration_bucket
+      - member_dna_redis_flush_duration_bucket: member_dna_redis_flush_duration_bucket
+      - member_dna_redis_create_client_duration_bucket: member_dna_redis_create_client_duration_bucket
+      - member_dna_get_profile_duration_bucket: member_dna_get_profile_duration_bucket
+      - member_dna_cached_profile_staleness_bucket: member_dna_cached_profile_staleness_bucket
+      - sanic_request_latency_sec_bucket: sanic_request_latency_sec_bucket
+    send_distribution_buckets: true
+    send_distribution_counts_as_monotonic: false
+    send_histograms_buckets: true
+    send_monotonic_counter: false
