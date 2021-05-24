@@ -18,6 +18,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   curl https://pyenv.run | bash
   #pyenv
   #pyenv update
+  echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+  echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+  echo 'eval "$(pyenv init --path)"' >> ~/.profile
   export PATH="~/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
@@ -29,6 +32,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 
   echo -e "${GREEN}Sourcing bashrc${NOCOLOR}"
+  source ~/.profile
   source ~/.bashrc
 
   echo -e "${GREEN}Updating pyenv metadata${NOCOLOR}"
