@@ -45,8 +45,9 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  config.vm.synced_folder "./configs", "/etc/datadog-agent"
+  #config.vm.synced_folder "./configs", "/etc/datadog-agent"
   config.vm.synced_folder "./prometheus", "/home/vagrant/prometheus"
+  config.vm.synced_folder "./shared", "/home/vagrant/shared"
   # config.vm.synced_folder "./bashrc", "/home/vagrant/bashrc"
 
   # Provider-specific configuration so you can fine-tune various
