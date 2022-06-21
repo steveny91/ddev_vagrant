@@ -13,6 +13,9 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "bento/ubuntu-20.04"
+  #for M1 machines, comment out the line above and uncomment these two: 
+  # config.vm.box = "uwbbi/bionic-arm64"
+  # config.vm.provider "vmware_desktop" do |v|
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
